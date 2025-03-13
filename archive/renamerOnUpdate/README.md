@@ -4,29 +4,31 @@ Using metadata from your Stash to rename/move your file.
 
 ## Table of Contents  
 
-- [*renamerOnUpdate*](#renameronupdate)
-  - [Table of Contents](#table-of-contents)
-  - [Requirement](#requirement)
-  - [Installation (manually)](#installation-manually)
-  - [Installation (via manager)](#installation-via-manager)
-    - [:exclamation: Make sure to configure the plugin by editing `renamerOnUpdate_config.py` before running it :exclamation:](#exclamation-make-sure-to-configure-the-plugin-by-editing-renameronupdate_configpy-before-running-it-exclamation)
-  - [Usage](#usage)
-  - [Configuration](#configuration)
-  - [Custom configuration file](#custom-configuration-file)
-  - [renamerOnUpdate\_config.py explained](#renameronupdate_configpy-explained)
-    - [Template](#template)
-    - [Filename](#filename)
-      - [- Based on a Tag](#--based-on-a-tag)
-      - [- Based on a Studio](#--based-on-a-studio)
-      - [- Change filename no matter what](#--change-filename-no-matter-what)
-    - [Path](#path)
-      - [- Based on a Tag](#--based-on-a-tag-1)
-      - [- Based on a Studio](#--based-on-a-studio-1)
-      - [- Based on a Path](#--based-on-a-path)
-      - [- Change path no matter what](#--change-path-no-matter-what)
-      - [- Special Variables](#--special-variables)
-    - [Advanced](#advanced)
-      - [Groups](#groups)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Requirement](#requirement)
+- [Installation (manually)](#installation-manually)
+- [Installation (via manager)](#installation-via-manager)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Custom configuration file](#custom-configuration-file)
+- [renamerOnUpdate_config.py explained](#renameronupdate_configpy-explained)
+  - [Template](#template)
+  - [Filename](#filename)
+    - [Filename - Based on a Tag](#filename---based-on-a-tag)
+    - [Filename - Based on a Studio](#filename---based-on-a-studio)
+    - [Filename - Change filename no matter what](#filename---change-filename-no-matter-what)
+  - [Path](#path)
+    - [Path - Based on a Tag](#path---based-on-a-tag)
+    - [Path - Based on a Studio](#path---based-on-a-studio)
+    - [Path - Based on a Path](#path---based-on-a-path)
+    - [Path - Change path no matter what](#path---change-path-no-matter-what)
+    - [Path - Special Variables](#path---special-variables)
+  - [Advanced](#advanced)
+    - [Groups](#groups)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Requirement
 
@@ -41,13 +43,15 @@ Using metadata from your Stash to rename/move your file.
 - Reload plugins (Settings > Plugins > Reload)
 - *renamerOnUpdate* appears
 
+**_ :exclamation: Make sure to configure the plugin by editing `renamerOnUpdate_config.py` before running it :exclamation: _**
+
 ## Installation (via manager)
 
 - Go to Settings > Plugins
 - Find **Available Plugins** and expand the package called **Community (stable)**.
 - Select `renamerOnUpdate` and click **Install**
 
-### :exclamation: Make sure to configure the plugin by editing `renamerOnUpdate_config.py` before running it :exclamation:
+**_ :exclamation: Make sure to configure the plugin by editing `renamerOnUpdate_config.py` before running it :exclamation: _**
 
 ## Usage
 
@@ -113,7 +117,7 @@ Change your filename (C:\Temp\\**QmlnQnVja0J1bm55.mp4**)
 
 **Priority** : Tags > Studios > Default
 
-#### - Based on a Tag
+#### Filename - Based on a Tag
 
 ```py
 tag_templates  = {
@@ -127,7 +131,7 @@ tag_templates  = {
 | rename_tag  | `C:\Temp\2008 Big Buck Bunny - Blender Institute 1080p H264.mp4` |
 | rename_tag2 | `C:\Temp\Big Buck Bunny.mp4`                                     |
 
-#### - Based on a Studio
+#### Filename - Based on a Studio
 
 ```py
 studio_templates  = {
@@ -141,7 +145,7 @@ studio_templates  = {
 | Blender Institute | `C:\Temp\2008-05-20 - Big Buck Bunny [Blender Institute].mp4` |
 | Pixar             | `C:\Temp\Big Buck Bunny [Pixar].mp4`                          |
 
-#### - Change filename no matter what
+#### Filename - Change filename no matter what
 
 ```py
 use_default_template  =  True
@@ -154,7 +158,7 @@ The file became: `C:\Temp\2008-05-20 - Big Buck Bunny.mp4`
 
 Change your path (**C:\Temp**\\QmlnQnVja0J1bm55.mp4)
 
-#### - Based on a Tag
+#### Path - Based on a Tag
 
 ```py
 p_tag_templates  = {
@@ -168,7 +172,7 @@ p_tag_templates  = {
 | rename_tag  | `D:\Video\QmlnQnVja0J1bm55.mp4`      |
 | rename_tag2 | `E:\Video\2008\QmlnQnVja0J1bm55.mp4` |
 
-#### - Based on a Studio
+#### Path - Based on a Studio
 
 ```py
 p_studio_templates  = {
@@ -182,7 +186,7 @@ p_studio_templates  = {
 | Blender Institute | `D:\Video\Blender\QmlnQnVja0J1bm55.mp4` |
 | Pixar             | `E:\Video\Pixar\QmlnQnVja0J1bm55.mp4`   |
 
-#### - Based on a Path
+#### Path - Based on a Path
 
 ```py
 p_path_templates = {
@@ -196,7 +200,7 @@ p_path_templates = {
 | `C:\Temp`  | `D:\Video\QmlnQnVja0J1bm55.mp4`     |
 | `C:\Video` | `E:\Video\Win\QmlnQnVja0J1bm55.mp4` |
 
-#### - Change path no matter what
+#### Path - Change path no matter what
 
 ```py
 p_use_default_template  =  True
@@ -205,7 +209,7 @@ p_default_template  =  r"D:\Video\"
 
 The file is moved to: `D:\Video\QmlnQnVja0J1bm55.mp4`
 
-#### - Special Variables
+#### Path - Special Variables
 
 `$studio_hierarchy` - Create the entire hierarchy of studio as folder (E.g. `../MindGeek/Brazzers/Hot And Mean/video.mp4`). Use your parent studio.
 
